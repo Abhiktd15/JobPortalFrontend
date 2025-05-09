@@ -11,6 +11,7 @@ import {
     MenuItems,
 } from "@headlessui/react";
 import { UserIcon,ArrowRightStartOnRectangleIcon } from '@heroicons/react/24/outline'
+import { toast } from "react-toastify";
 
 const Navbar = () => {
     const user = false;
@@ -26,7 +27,7 @@ const Navbar = () => {
                 </div>
                 <div className="flex items-center gap-10">
                 <ul className="flex font-bold items-center gap-5">
-                    <li>Home</li>
+                    <li >Home</li>
                     <li>Jobs</li>
                     <li>Browse</li>
                 </ul>
