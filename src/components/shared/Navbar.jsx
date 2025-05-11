@@ -12,9 +12,10 @@ import {
 } from "@headlessui/react";
 import { UserIcon,ArrowRightStartOnRectangleIcon } from '@heroicons/react/24/outline'
 import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
-    const user = false;
+    const {user} =  useSelector(state => state.auth);
 
 
     return (
@@ -27,9 +28,9 @@ const Navbar = () => {
                 </div>
                 <div className="flex items-center gap-10">
                 <ul className="flex font-bold items-center gap-5">
-                    <li >Home</li>
-                    <li>Jobs</li>
-                    <li>Browse</li>
+                    <Link to='/' >Home</Link>
+                    <Link to='/jobs'>Jobs</Link>
+                    <Link to="/browse">Browse</Link>
                 </ul>
 
                 {
@@ -71,10 +72,10 @@ const Navbar = () => {
                                     </div>
                                 </MenuItem>
                                 <MenuItem>
-                                    <div className="flex items-center ml-2 w-fit cursor-pointer gap-4 ">
+                                    <Link to='/profile' className="flex items-center ml-2 w-fit cursor-pointer gap-4 ">
                                         <UserIcon height={25}/>
-                                        <a className="hover:underline font-semibold">View Profile</a>
-                                    </div>
+                                        <h1 className="hover:underline font-semibold">View Profile</h1>
+                                    </Link>
                                 </MenuItem>
                                 <MenuItem>
                                     <div className="flex gap-4 items-center ml-2 w-fit cursor-pointer  ">
