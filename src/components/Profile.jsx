@@ -6,11 +6,12 @@ import UpdateProfileDialog from './UpdateProfileDialog'
 import { useSelector } from 'react-redux'
 import { User } from '../../../Backend_JobPortal/models/user.models'
 
-const skills  = ["html","css","js","reactjs","nodejs"]
 
 const Profile = () => {
     const [open,setOpen] = useState(false)
     const {user} = useSelector(state => state.auth)
+
+    const ResumeViewURL = `https://docs.google.com/gview?url=${encodeURIComponent(user?.profile?.resume)}&embedded=true`;
 
     return (
         <div>
@@ -49,7 +50,7 @@ const Profile = () => {
                     </div>
                     <div className='grid w-full max-w-sm items-center gap-1.5'>
                         <label className='text-sm font-semibold'>Resume</label>
-                        {user?.profile?.file ? <a className='text-blue-500 w-full hover:underline cursor-pointer' target='_blank' href='https://youtube.com'>Abhishek_resume</a>:<span>NA</span>}
+                        {user?.profile?.resume ? <a className='text-blue-500 w-full hover:underline cursor-pointer' target='_blank' href={ResumeViewURL}>{user?.profile?.resumeOriginalName}</a>:<span>NA</span>}
                     </div>
                 </div>
             </div>

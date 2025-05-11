@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
     Button,
     Disclosure,
@@ -12,10 +12,29 @@ import {
 } from "@headlessui/react";
 import { UserIcon,ArrowRightStartOnRectangleIcon } from '@heroicons/react/24/outline'
 import { toast } from "react-toastify";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { USER_API_END_POINT } from "../../utils/constant";
+import axios from "axios";
+import { setUser } from "../../redux/authSlice";
 
 const Navbar = () => {
     const {user} =  useSelector(state => state.auth);
+    const dispatch = useDispatch();
+    const navigate  = useNavigate();
+
+    const logoutHandler = async() => {
+        try {
+            const res = await axios.get(`${USER_API_END_POINT}/logout`,{withCredentials: true,})
+            if(res.data.success){
+                dispatch(setUser(null))
+                navigate("/")
+                toast.success(res.data.message)
+            }
+        } catch (error) {
+            console.log(error);
+            toast.error(error.response.data.message)
+        }
+    }
 
 
     return (
@@ -48,8 +67,8 @@ const Navbar = () => {
                                     <span className="absolute -inset-1.5" />
                                     <span className="sr-only">Open user menu</span>
                                     <img
-                                    alt=""
-                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    alt="Profile Icon"
+                                    src={user?.profile?.profilePhoto}
                                     className="size-10 rounded-full"
                                     />
                                 </MenuButton>
@@ -61,13 +80,13 @@ const Navbar = () => {
                                 <MenuItem>
                                     <div className="flex items-center gap-4 ">
                                         <img
-                                            alt=""
-                                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                            alt="Profile Photo"
+                                            src={user?.profile?.profilePhoto}
                                             className="size-10 rounded-full"
                                             />
                                         <div>
-                                            <h4 className="font-medium">Abhishek MERN Stack</h4>
-                                            <p className="text-sm ">LOren ipsum dolor sit amet</p>
+                                            <h4 className="font-medium">{user?.fullName}</h4>
+                                            <p className="text-sm ">{user?.profile?.bio}</p>
                                         </div>
                                     </div>
                                 </MenuItem>
@@ -78,9 +97,9 @@ const Navbar = () => {
                                     </Link>
                                 </MenuItem>
                                 <MenuItem>
-                                    <div className="flex gap-4 items-center ml-2 w-fit cursor-pointer  ">
+                                    <div onClick={logoutHandler} className="flex gap-4 items-center ml-2 w-fit cursor-pointer  ">
                                         <ArrowRightStartOnRectangleIcon height={25}/>
-                                        <a className=" hover:underline font-semibold">Log Out</a>
+                                        <p className=" hover:underline font-semibold">Log Out</p>
                                     </div>
                                 </MenuItem>
                                 </MenuItems>

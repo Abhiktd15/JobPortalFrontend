@@ -39,6 +39,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
         }
 
         try {
+            setLoading(true)
             const res = await axios.post(`${USER_API_END_POINT}/profile/update`,formData,{
                 headers:{
                     "Content-Type":"multipart/form-data"
@@ -52,6 +53,8 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
         } catch (error) {
             console.log(error)
             toast.error(error.response.data.message)
+        } finally{
+            setLoading(false)
         }
         setOpen(false)
     }
@@ -166,7 +169,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                     type="submit"
                     className="px-4 py-2 bg-[#20549af6] text-white rounded-lg font-medium w-full"
                 >
-                    Update
+                    {loading? "Loading..." : "Update"}
                 </button>
                 </div>
             </form>
