@@ -3,12 +3,21 @@ import Navbar from './components/shared/Navbar'
 import Login from './components/auth/login'
 import Signup from './components/auth/signup'
 import Home from './components/Home'
-import { ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import JobsPage from './components/JobsPage'
 import Browse from './components/Browse'
 import Profile from './components/Profile'
 import JobDescription from './components/JobDescription'
+import { useEffect } from 'react'
+import axios from 'axios'
+import { USER_API_END_POINT } from './utils/constant'
+import { useDispatch } from 'react-redux'
+import { setUser } from './redux/authSlice'
+import { StrictMode } from 'react'
+import Companies from './components/admin/Companies'
+import CreateCompany from './components/admin/CreateCompany'
+import CompanySetup from './components/admin/CompanySetup'
 
 const appRouter = createBrowserRouter([
   {
@@ -39,9 +48,38 @@ const appRouter = createBrowserRouter([
     path:"/jobs/description/:id",
     element:<JobDescription/>
   },
+  //admin routes
+  {
+    path:"/admin/companies",
+    element:<Companies/>
+  },
+  {
+    path:"/admin/companies/create",
+    element:<CreateCompany/>
+  },
+  {
+    path:"/admin/companies/:id",
+    element:<CompanySetup/>
+  },
 ])
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    const isAuthorized = async () => {
+      try {
+        const res = await axios.get(`${USER_API_END_POINT}/me`,{withCredentials:true})
+        if (res.data.success) {
+          dispatch(setUser(res.data.user))      
+        }
+      } catch (error) {
+        console.log(error)
+        toast.error("Please Login to continue")
+      }
+    }
+    isAuthorized()
+  },[])
   return (
     <>
       <RouterProvider router={appRouter}/>

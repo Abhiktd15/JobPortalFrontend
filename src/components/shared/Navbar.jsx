@@ -47,9 +47,19 @@ const Navbar = () => {
                 </div>
                 <div className="flex items-center gap-10">
                 <ul className="flex font-bold items-center gap-5">
-                    <Link to='/' >Home</Link>
-                    <Link to='/jobs'>Jobs</Link>
-                    <Link to="/browse">Browse</Link>
+                    {user && user?.role === "recruiter" ? (
+                        <>
+                            <Link to='/admin/companies' >Companies</Link>
+                            <Link to='/admin/jobs'>Jobs</Link>
+                        </>
+                    ) :(
+                        <>
+                            <Link to='/' >Home</Link>
+                            <Link to='/jobs'>Jobs</Link>
+                            <Link to="/browse">Browse</Link>
+                        </>
+                    )}
+                    
                 </ul>
 
                 {
@@ -90,12 +100,14 @@ const Navbar = () => {
                                         </div>
                                     </div>
                                 </MenuItem>
-                                <MenuItem>
-                                    <Link to='/profile' className="flex items-center ml-2 w-fit cursor-pointer gap-4 ">
-                                        <UserIcon height={25}/>
-                                        <h1 className="hover:underline font-semibold">View Profile</h1>
-                                    </Link>
-                                </MenuItem>
+                                {user && user?.role === "student" && (
+                                    <MenuItem>
+                                        <Link to='/profile' className="flex items-center ml-2 w-fit cursor-pointer gap-4 ">
+                                            <UserIcon height={25}/>
+                                            <h1 className="hover:underline font-semibold">View Profile</h1>
+                                        </Link>
+                                    </MenuItem>
+                                )}
                                 <MenuItem>
                                     <div onClick={logoutHandler} className="flex gap-4 items-center ml-2 w-fit cursor-pointer  ">
                                         <ArrowRightStartOnRectangleIcon height={25}/>

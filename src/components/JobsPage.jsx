@@ -3,9 +3,11 @@ import Navbar from './shared/Navbar'
 import FilterCard from './FilterCard'
 import JobCard from './JobCard'
 import { useSelector } from 'react-redux'
+import useGetAllJobs from '../hooks/useGetAllJobs'
 
 const JobsPage = () => {
     const {allJobs} = useSelector(state => state.job)
+    useGetAllJobs()
     return (
         <div>
             <Navbar/>
