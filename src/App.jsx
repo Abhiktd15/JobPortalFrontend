@@ -18,6 +18,9 @@ import { StrictMode } from 'react'
 import Companies from './components/admin/Companies'
 import CreateCompany from './components/admin/CreateCompany'
 import CompanySetup from './components/admin/CompanySetup'
+import AdminJobs from './components/admin/AdminJobs'
+import PostJobs from './components/admin/PostJobs'
+import Applicants from './components/admin/Applicants'
 
 const appRouter = createBrowserRouter([
   {
@@ -60,6 +63,18 @@ const appRouter = createBrowserRouter([
   {
     path:"/admin/companies/:id",
     element:<CompanySetup/>
+  },
+  {
+    path:"/admin/jobs/",
+    element:<AdminJobs/>
+  },
+  {
+    path:"/admin/jobs/:id/applicants",
+    element:<Applicants/>
+  },
+  {
+    path:"/admin/jobs/create",
+    element:<PostJobs/>
   },
 ])
 
