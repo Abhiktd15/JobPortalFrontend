@@ -153,6 +153,7 @@ const Signup = () => {
                 <div className="mt-1 flex items-center gap-2">
                   <input 
                     type='radio'
+                    id='r1'
                     name='role'
                     value='student'
                     checked={input.role === 'student'}
@@ -160,7 +161,7 @@ const Signup = () => {
                     className=" cursor-pointer rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                   />
                   <div className="flex items-center justify-between">
-                    <label   className="block text-sm/6 font-medium text-gray-900">
+                    <label htmlFor='r1'  className="block text-sm/6 font-medium text-gray-900 cursor-pointer">
                       Student
                     </label>
                   </div>
@@ -168,6 +169,7 @@ const Signup = () => {
                 <div className="mt-1 flex items-center gap-2">
                   <input 
                     type='radio'
+                    id='r2'
                     name='role'
                     value='recruiter'
                     onChange={changeEventHandler}
@@ -175,7 +177,7 @@ const Signup = () => {
                     className="  cursor-pointer rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                   />
                   <div className="flex items-center justify-between">
-                    <label  className="block text-sm/6 font-medium text-gray-900">
+                    <label htmlFor='r2' className="block text-sm/6 font-medium text-gray-900 cursor-pointer">
                       Recruiter
                     </label>
                   </div>

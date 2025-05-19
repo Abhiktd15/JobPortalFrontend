@@ -4,9 +4,11 @@ import { InboxIcon, MapPinIcon, PencilIcon, PhoneIcon } from '@heroicons/react/2
 import AppliedJobsTable from './AppliedJobsTable'
 import UpdateProfileDialog from './UpdateProfileDialog'
 import { useSelector } from 'react-redux'
+import useGetAppliedJob from '../hooks/useGetAppliedJob'
 
 
 const Profile = () => {
+    useGetAppliedJob();
     const [open,setOpen] = useState(false)
     const {user} = useSelector(state => state.auth)
 
@@ -42,7 +44,7 @@ const Profile = () => {
                         <div className='flex-wrap flex items-center gap-2 mt-4'>
                             {
                                 user?.profile?.skills?.length !== 0 ? user?.profile?.skills?.map((skill,index) => 
-                                    <h3 className='border border-gray-200 px-2 py-1 text-blue-700 font-bold rounded-2xl' >{skill}</h3>
+                                    <h3 key={index} className='border border-gray-200 px-2 py-1 text-blue-700 font-bold rounded-2xl' >{skill}</h3>
                                 ) :<span>NA</span>
                             }
                         </div>

@@ -2,6 +2,9 @@ import React from 'react'
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import {ArrowLeftIcon,ArrowRightIcon} from '@heroicons/react/16/solid'
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { setSearchedQuery } from '../redux/jobSlice';
 
 const responsive = {
     0: { items: 1 },
@@ -17,7 +20,6 @@ const category = [
     "FullStack Developer"
 ]
 
-const items = category.map((item) => <button className='border-2 border-gray-100 py-2 px-3 rounded-full text-base font-semibold'>{item}</button>)
 const nextButton = (
     <div className='absolute right-[-30px] top-5 -translate-y-1/2 z-10 bg-white   p-1 cursor-pointer'>
         <ArrowRightIcon className='h-6 w-6 text-black' />
@@ -30,6 +32,15 @@ const prevButton = (
 )
 
 const CategoryCarousel = () => {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    const searchJobHandler = (query) => {
+            dispatch(setSearchedQuery(query))
+            navigate("/browse")
+        }
+    const items = category.map((item) => <button onClick={() => searchJobHandler(item)} className='border-2 border-gray-100 py-2 px-3 rounded-full text-base font-semibold'>{item}</button>)
+
     return (
         <div>
             <div className='relative w-full max-w-xl mx-auto my-5   '>
