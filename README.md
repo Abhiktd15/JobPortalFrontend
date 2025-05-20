@@ -37,4 +37,5 @@ A full-featured job portal web application where users can search, apply for job
 - Npm install
 - npm run dev
 
-**ScreenShots:**
+## 📸 ScreenShots
+
