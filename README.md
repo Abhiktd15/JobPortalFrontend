@@ -33,7 +33,7 @@ A full-featured job portal web application where users can search, apply for job
 
 ---
 **Frontend:**
--SETUP GUIDE
--git clone 
--npm i
--npm run dev
+- Git Clone
+- Npm install
+- npm run dev
+
