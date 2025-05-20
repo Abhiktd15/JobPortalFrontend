@@ -9,11 +9,9 @@ A full-featured job portal web application where users can search, apply for job
 - 🧑‍🎓 User Registration and Login with JWT Authentication
 - 👨‍💼 Role-based access for Job Seekers and Employers
 - 🔍 Advanced Job Search and Filtering (by location, salary, title)
-- 📝 Resume Upload using Cloudinary
+- 📝 Resume Upload,Profile Upload using Cloudinary
 - 💼 Post and manage job listings (for employers)
 - 🎯 Apply for jobs and track application history (for users)
-- 📊 Admin Dashboard (Optional)
-
 ---
 
 ## 🛠️ Tech Stack
@@ -22,7 +20,9 @@ A full-featured job portal web application where users can search, apply for job
 - React.js
 - Tailwind CSS
 - Axios
-- Redux (if used)
+- Redux
+- Framer-Motion
+- UI library(HeroIcons, HeadlessUI)
 
 **Backend:**
 - Node.js
@@ -32,6 +32,8 @@ A full-featured job portal web application where users can search, apply for job
 - JWT for authentication
 
 ---
-
-## 📁 Folder Structure
-
+**Frontend:**
+-SETUP GUIDE
+--git clone 
+--npm i
+--npm run dev
