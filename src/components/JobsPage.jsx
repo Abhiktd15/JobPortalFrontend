@@ -1,10 +1,10 @@
+import { motion } from 'framer-motion'
 import React, { useEffect } from 'react'
-import Navbar from './shared/Navbar'
-import FilterCard from './FilterCard'
-import JobCard from './JobCard'
 import { useSelector } from 'react-redux'
 import useGetAllJobs from '../hooks/useGetAllJobs'
-import {motion} from 'framer-motion'
+import FilterCard from './FilterCard'
+import JobCard from './JobCard'
+import Navbar from './shared/Navbar'
 
 const JobsPage = () => {
     useGetAllJobs()
@@ -12,7 +12,16 @@ const JobsPage = () => {
     const [filterJobs, setFilterJobs] = React.useState(allJobs)
 
     useEffect(() => {
-        if(searchedQuery){
+
+        if (searchedQuery && !isNaN(Number(searchedQuery))) {
+            // If the query is a number (for salary)
+            const filteredJobs = allJobs?.filter((job) => {
+                return job?.salary?.toString().includes(searchedQuery);
+            });
+            setFilterJobs(filteredJobs);
+        }
+        else if(searchedQuery){
+            console.log(typeof(searchedQuery))
             const filteredJobs = allJobs?.filter((job) => {
                 return job?.title?.toLowerCase().includes(searchedQuery.toLowerCase()) || job?.location?.toLowerCase().includes(searchedQuery.toLowerCase())
             })

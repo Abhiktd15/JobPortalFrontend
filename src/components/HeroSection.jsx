@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom'
 import { MagnifyingGlassIcon } from "@heroicons/react/16/solid";
 import { setSearchedQuery } from "../redux/jobSlice";
+import { motion } from "framer-motion";
+
 const HeroSection = () => {
     const [query, setQuery] = useState("");
     const dispatch = useDispatch();
@@ -13,7 +15,11 @@ const HeroSection = () => {
     }
     return (
         <div className="text-center ">
-            <div className="flex flex-col gap-5 my-10">
+            <motion.div
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4}}
+                className="flex flex-col gap-5 my-10">
                 <span className="mx-auto px-4 py-2 rounded-full bg-gray-100 text-[#F83002] font-medium">
                 No 1 Job search website
                 </span>
@@ -36,7 +42,7 @@ const HeroSection = () => {
                     <MagnifyingGlassIcon className="h-6 w-12" />
                 </button>
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 };
