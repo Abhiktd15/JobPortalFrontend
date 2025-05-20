@@ -12,12 +12,12 @@ const JobCard = ({job}) => {
         return daysAgo;
     }
     return (
-        <div className='p-5 min-h-[400px] rounded-2xl shadow-xl bg-white border border-gray-100 '>
+        <div className='p-5 min-h-[300px] rounded-2xl shadow-xl bg-[#09090B] border border-gray-100 '>
             <div className='flex items-center justify-between'>
                 <p className='text-sm text-gray-600'>{daysAgoFunction(job?.createdAt) === 0 ?"Today":`${daysAgoFunction(job?.createdAt)}`} days ago</p>
-                <button className='border border-black p-2 rounded-full hover:bg-gray-100'><BookmarkIcon className=' h-5 w-5 rounded-full '/></button>
+                <button className='border border-black p-2 rounded-full hover:bg-gray-100 hover:text-black'><BookmarkIcon className=' h-5 w-5 rounded-full '/></button>
             </div>
-            <div className='flex items-center gap-2 my-2'>
+            <div className='flex items-center gap-4 my-2'>
                 <button className=' border rounded-lg'>
                     {/* Avatar  */}
                     <img className='w-16 h-16 rounded-lg' src={job?.company?.logo}/>
@@ -37,8 +37,7 @@ const JobCard = ({job}) => {
                 <h3 className='border border-gray-200 px-2 py-1 text-[#7209b7] font-bold rounded-2xl' >{job?.salary} LPA</h3>
             </div>
             <div className=' flex items-center gap-4 mt-4'>
-                <button onClick={() => navigate(`/jobs/description/${job?._id}`)} className='border py-2 px-3 rounded-md text-sm font-medium '>Details</button>
-                <button className='bg-[#7209b7] text-white py-2 px-3 rounded-md text-sm font-medium'>Save For Later</button>
+                <button onClick={() => navigate(`/jobs/description/${job?._id}`)} className='bg-[#7209b7] text-white py-2 px-3 rounded-md text-sm font-medium hover:scale-105'>View Details</button>
             </div>
         </div>
     )

@@ -21,13 +21,13 @@ const category = [
 ]
 
 const nextButton = (
-    <div className='absolute right-[-30px] top-5 -translate-y-1/2 z-10 bg-white   p-1 cursor-pointer'>
-        <ArrowRightIcon className='h-6 w-6 text-black' />
+    <div className='absolute right-[-30px] top-5 -translate-y-1/2 z-10 bg-[#6044CF]  rounded-md  p-1 cursor-pointer'>
+        <ArrowRightIcon className='h-8 w-8 text-white' />
     </div>
 )
 const prevButton = (
-    <div className='absolute left-[-50px] top-5 -translate-y-1/2 z-10 bg-white  p-1 cursor-pointer'>
-        <ArrowLeftIcon className='h-6 w-6 text-black' />
+    <div className='absolute left-[-50px] top-5 -translate-y-1/2 z-10 bg-[#6044CF] rounded-md  p-1 cursor-pointer'>
+        <ArrowLeftIcon className='h-8 w-8 text-white' />
     </div>
 )
 
@@ -49,7 +49,7 @@ const CategoryCarousel = () => {
                 items={items}
                 infinite
                 autoPlay
-                animationDuration={2000}
+                animationDuration={3000}
                 disableDotsControls
                 responsive={responsive}
                 controlsStrategy="alternate"

@@ -48,11 +48,11 @@ const Login = () => {
   }
   
   return (
-    <div>
+    <div className='h-screen'>
       <Navbar/>
-      <div className="flex min-h-full flex-1 flex-col  justify-center mx-auto items-center px-6 py-12 lg:px-8">
+      <div className="flex  flex-1 flex-col  justify-center mx-auto items-center px-6 py-12 lg:px-8 text-white  ">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm  ">
-          <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
+          <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight ">
             Login
           </h2>
         </div>
@@ -62,7 +62,7 @@ const Login = () => {
 
             <div>
               <div className="flex items-center justify-between">
-                <label  className="block text-sm/6 font-medium text-gray-900">
+                <label  className="block text-lg font-medium ">
                   Email
                 </label>
               </div>
@@ -74,14 +74,14 @@ const Login = () => {
                   onChange={changeEventHandler}
                   placeholder='abhi@gmail.com'
                   required
-                  className="block w-full rounded-md border border-gray-200 bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md border border-gray-200 bg-[#09090B] px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2   sm:text-sm/6"
                 />
               </div>
             </div>
 
             <div>
               <div className="flex items-center justify-between">
-                <label  className="block text-sm/6 font-medium text-gray-900">
+                <label  className="block text-lg font-medium ">
                   Password
                 </label>
               </div>
@@ -93,7 +93,7 @@ const Login = () => {
                   value={input.password}
                   onChange={changeEventHandler}
                   required
-                  className="block w-full rounded-md border border-gray-200 bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md border border-gray-200 bg-[#09090B] px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2   sm:text-sm/6"
                 />
               </div>
             </div>
@@ -112,7 +112,7 @@ const Login = () => {
                     className=" cursor-pointer rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                   />
                   <div className="flex items-center justify-between">
-                    <label htmlFor='r1'  className="block text-sm/6 font-medium text-gray-900 cursor-pointer">
+                    <label htmlFor='r1'  className="block text-sm/6 font-medium  cursor-pointer">
                       Student
                     </label>
                   </div>
@@ -128,7 +128,7 @@ const Login = () => {
                     className="  cursor-pointer rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                   />
                   <div className="flex items-center justify-between">
-                    <label htmlFor='r2' className="block text-sm/6 font-medium text-gray-900 cursor-pointer">
+                    <label htmlFor='r2' className="block text-sm/6 font-medium   cursor-pointer">
                       Recruiter
                     </label>
                   </div>
@@ -138,9 +138,10 @@ const Login = () => {
 
             <div>
               {
-                loading ? <button className='flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>Loading....</button>:<button
+                loading ? <button 
+                className='flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>Loading....</button>:<button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full justify-center rounded-md bg-[#6044CF] px-3 py-1.5 text-lg font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Login
               </button>

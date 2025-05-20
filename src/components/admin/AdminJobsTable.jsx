@@ -38,14 +38,14 @@ const AdminJobsTable = () => {
                                 <tbody>
                                     {
                                         filterJobs?.map((job) => (
-                                        <tr key={job?._id} className='font-medium text-sm border-b-[1px] border-gray-100 hover:bg-gray-100 cursor-pointer '>
+                                        <tr key={job?._id} className='font-medium text-sm border-b-[1px] border-gray-100  hover:bg-[#0f0f12] cursor-pointer '>
                                         <td className='p-2'>{job?.company?.name}</td>
                                         <td className='p-2'>{job?.title}</td>
                                         <td className='p-2'>{job?.createdAt.split("T")[0]}</td>
                                         <td className='p-2 flex items-end justify-end relative'>
                                             <Menu as="div" className="relative inline-block text-left">
                                             <div>
-                                                <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50">
+                                                <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-[#09090B] text-white px-3 py-2 text-sm font-semibold shadow-xs ring-1 ring-gray-300 ring-inset">
                                                 Options
                                                 <ChevronDownIcon aria-hidden="true" className="-mr-1 size-5 text-gray-400" />
                                                 </MenuButton>

@@ -38,16 +38,16 @@ const CompaniesTable = () => {
                                 <tbody>
                                     {
                                         filterCompany?.map((company) => (
-                                        <tr key={company?._id} className='font-medium text-sm border-b-[1px] border-gray-100 hover:bg-gray-100 cursor-pointer '>
+                                        <tr key={company?._id} className='font-medium text-sm border-b-[1px] border-gray-100 hover:bg-[#0f0f12] cursor-pointer '>
                                         <td className='p-2 flex items-center justify-center'>
                                             <img src={company?.logo} alt="Company Logo" className='w-10 h-10 rounded-full'/>
                                         </td>
                                         <td className='p-2'>{company?.name}</td>
                                         <td className='p-2'>{company?.createdAt.split("T")[0]}</td>
-                                        <td className='p-2 flex items-end justify-end relative'>
+                                        <td className='p-2 flex items-end justify-end  relative'>
                                             <Menu as="div" className="relative inline-block text-left">
                                             <div>
-                                                <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-xs ring-1 ring-gray-300 ring-inset hover:bg-gray-50">
+                                                <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-[#09090B] px-3 py-2 text-sm font-semibold text-white shadow-xs ring-1 ring-gray-300 ">
                                                 Options
                                                 <ChevronDownIcon aria-hidden="true" className="-mr-1 size-5 text-gray-400" />
                                                 </MenuButton>

@@ -46,7 +46,7 @@ const ApplicantsTable = () => {
                             {
                                 allApplicants?.applications?.length < 0 ? <span>NO JObs Found</span> : (
                                     allApplicants?.applications?.map(application => (
-                                        <tr key={application?._id} className='font-medium text-sm border-b-[1px] border-gray-100 hover:bg-gray-100 cursor-pointer '>
+                                        <tr key={application?._id} className='font-medium text-sm border-b-[1px] border-gray-100 hover:bg-[#101013] cursor-pointer '>
                                             <td className='p-2 text-start'>{application?.applicant?.fullName}</td>
                                             <td className='p-2'>{application?.applicant?.email}</td>
                                             <td className='p-2'>{application?.applicant?.phoneNumber}</td>

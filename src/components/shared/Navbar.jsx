@@ -38,25 +38,25 @@ const Navbar = () => {
 
 
     return (
-        <div className="bg-white">
+        <div className="">
             <div className="flex items-center justify-between mx-auto max-w-7xl h-16">
                 <div>
-                <h1 className="text-2xl font-bold">
-                    Job<span className="text-[#F83002]">Portal</span>
+                <h1 className="text-2xl font-bold text-white">
+                    Job<span className="text-[#6044CF]">Portal</span>
                 </h1>
                 </div>
                 <div className="flex items-center gap-10">
-                <ul className="flex font-bold items-center gap-5">
+                <ul className="flex font-bold items-center gap-5 ">
                     {user && user?.role === "recruiter" ? (
                         <>
-                            <Link to='/admin/companies' >Companies</Link>
-                            <Link to='/admin/jobs'>Jobs</Link>
+                            <Link to='/admin/companies' className="text-white hover:text-[#6044CF]">Companies</Link>
+                            <Link to='/admin/jobs' className="text-white hover:text-[#6044CF]">Jobs</Link>
                         </>
                     ) :(
                         <>
-                            <Link to='/' >Home</Link>
-                            <Link to='/jobs'>Jobs</Link>
-                            <Link to="/browse">Browse</Link>
+                            <Link to='/' className="text-white hover:text-[#6044CF]" >Home</Link>
+                            <Link to='/jobs' className="text-white hover:text-[#6044CF]">Jobs</Link>
+                            <Link to="/browse" className="text-white hover:text-[#6044CF]">Browse</Link>
                         </>
                     )}
                     
@@ -69,7 +69,7 @@ const Navbar = () => {
                             <Link to={'/signup'}><Button className='border font-semibold rounded-md text-white px-3 py-2 bg-[#6A38C2] hover:scale-105 hover:bg-[#502c8e]'>Sign Up</Button></Link>
                         </div>
                     ):(
-                        <div>
+                        <div className="text-black">
                             {/* Avatar Dropdown Menu  */}
                             <Menu as="div" className="relative ml-3 ">
                                 <div>

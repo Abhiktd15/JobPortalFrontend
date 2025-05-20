@@ -14,10 +14,13 @@ const Browse = () => {
         dispatch(setSearchedQuery(""))
     })
     return (    
-        <div>
+        <div className='h-screen'> 
             <Navbar/>
             <div className='max-w-7xl mx-auto my-10'>
-                <h1 className='font-bold text-2xl my-10'>Serach Results ({allJobs?.length})</h1>
+                <div className='w-fit flex flex-col items-center gap-1'>
+                    <h1 className='text-4xl font-bold'>Search Results ({allJobs?.length})</h1>
+                    <hr className='w-1/3 border-2 border-[#6044CF]'/>
+                </div>
                 <motion.div
                 initial={{opacity:0,y:100}}
                 animate={{opacity:1,y:0}}

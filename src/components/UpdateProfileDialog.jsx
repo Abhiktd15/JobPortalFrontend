@@ -79,14 +79,14 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
     }, [open, setOpen]);
     if (!open) return null;
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
-        <div ref={dialogRef} className="bg-white p-6 rounded-xl shadow-xl w-full max-w-xl">
+        <div className="fixed inset-0 bg-gray-400 bg-opacity-40 flex items-center justify-center z-50">
+        <div ref={dialogRef} className="bg-[#09090B] p-6 rounded-xl shadow-xl w-full max-w-xl">
             <h2 className="text-xl font-bold mb-4">Update Profile</h2>
 
             <form onSubmit={SubmitHandler}>
-                <div className="flex flex-col gap-4 mb-4">
+                <div className="flex flex-col gap-4 mb-4 text-gray-300">
                     <div className="grid grid-cols-4 gap-4 items-center">
-                        <label htmlFor="name" className="text-right text-lg font-medium">Name</label>
+                        <label htmlFor="name" className="text-right text-lg font-medium ">Name</label>
                         <input
                         id="name"
                         type="text"
@@ -94,12 +94,12 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                         value={input.fullName}
                         onChange={changeEventHandler}
                         placeholder="Full Name"
-                        className="w-full border p-2  rounded col-span-3"
+                        className="w-full border p-2  rounded col-span-3 bg-[#09090B]"
                         />
                     </div>
 
                     <div className="grid grid-cols-4 gap-4 items-center">
-                        <label htmlFor="bio" className="text-right text-lg font-medium">Bio</label>
+                        <label htmlFor="bio" className="text-right text-lg font-medium ">Bio</label>
                         <input
                         id="bio"
                         type="text"
@@ -107,12 +107,12 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                         onChange={changeEventHandler}
                         name="bio"
                         placeholder="Bio"
-                        className="w-full border p-2  rounded col-span-3"
+                        className="w-full border p-2  rounded col-span-3 bg-[#09090B]"
                         />
                     </div>
 
                     <div className="grid grid-cols-4 gap-4 items-center">
-                        <label htmlFor="email" className="text-right text-lg font-medium">Email</label>
+                        <label htmlFor="email" className="text-right text-lg font-medium ">Email</label>
                         <input
                         id="email"
                         type="email"
@@ -120,12 +120,12 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                         onChange={changeEventHandler}
                         name="email"
                         placeholder="Email"
-                        className="w-full border p-2  rounded col-span-3"
+                        className="w-full border p-2  rounded col-span-3 bg-[#09090B]"
                         />
                     </div>
 
                     <div className="grid grid-cols-4 gap-4 items-center">
-                        <label htmlFor="phone" className="text-right text-lg font-medium">Number</label>
+                        <label htmlFor="phone" className="text-right text-lg font-medium ">Number</label>
                         <input
                         id="phone"
                         type="tel"
@@ -133,12 +133,12 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                         onChange={changeEventHandler}
                         name="phoneNumber"
                         placeholder="Phone Number"
-                        className="w-full border p-2  rounded col-span-3"
+                        className="w-full border p-2  rounded col-span-3 bg-[#09090B]"
                         />
                     </div>
 
                     <div className="grid grid-cols-4 gap-4 items-center">
-                        <label htmlFor="skills" className="text-right text-lg font-medium">Skills</label>
+                        <label htmlFor="skills" className="text-right text-lg font-medium ">Skills</label>
                         <input
                         type="text"
                         value={input.skills}
@@ -146,12 +146,12 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                         id="skills"
                         name="skills"
                         placeholder="Skills (comma separated)"
-                        className="w-full border p-2  rounded col-span-3"
+                        className="w-full border p-2  rounded col-span-3 bg-[#09090B]"
                         />
                     </div>
 
                     <div className="grid grid-cols-4 gap-4 items-center">
-                        <label htmlFor="resume" className="text-right text-lg font-medium">Resume</label>
+                        <label htmlFor="resume" className="text-right text-lg font-medium ">Resume</label>
                         <input
                         type="file"
                         id="resume"
@@ -159,7 +159,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                         name="file"
                         accept="application/pdf"
                         placeholder="Resume"
-                        className="w-full border p-2  rounded col-span-3"
+                        className="w-full border p-2  rounded col-span-3 bg-[#09090B]"
                         />
                     </div>
                 </div>
@@ -167,7 +167,7 @@ const UpdateProfileDialog = ({ open, setOpen }) => {
                 <div className="flex items-center justify-between gap-3 w-full">
                 <button
                     type="submit"
-                    className="px-4 py-2 bg-[#20549af6] text-white rounded-lg font-medium w-full"
+                    className="px-4 py-2 bg-[#6044CF] text-white rounded-lg text-lg font-semibold w-full"
                 >
                     {loading? "Loading..." : "Update"}
                 </button>

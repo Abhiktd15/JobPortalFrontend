@@ -32,10 +32,10 @@ const Applicants = () => {
     },[])
     
     return (
-        <div>
+        <div className='h-screen '>
             <Navbar/>
-            <div className='max-w-7xl mx-auto'>
-                <h1 className='font-bold text-xl my-5'>Applicants ({allApplicants?.applications?.length})</h1>
+            <div className='max-w-7xl mx-auto border border-gray-200 rounded-xl px-6 mt-10 py-2'>
+                <h1 className='font-bold text-xl my-5 underline  underline-offset-4 '>Applicants ({allApplicants?.applications?.length})</h1>
                 <ApplicantsTable/>
 
             </div>

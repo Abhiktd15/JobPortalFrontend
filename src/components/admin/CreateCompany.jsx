@@ -36,9 +36,9 @@ const CreateCompany = () => {
     
 
     return (
-        <div>
+        <div className='h-screen'>
             <Navbar/>
-            <div className='max-w-4xl mx-auto my-10  '>
+            <div className='max-w-4xl mx-auto my-10  border border-gray-200 px-4 py-2 rounded-xl'>
                 <div className='my-10'>
                     <h1 className='font-bold text-2xl'>Your Company Name</h1>  
                     <p className='text-gray-500 text-base  font-medium'>What would you like to give your company name? You can change this later</p>
@@ -46,11 +46,11 @@ const CreateCompany = () => {
 
                 <div className=' flex flex-col  gap-2'>
                     <label className='text-lg font-bold '>Company Name</label>
-                    <input type="text" onChange={(e) => setCompanyName(e.target.value)} placeholder='Job Hunt, Microsoft' className='border-2 border-gray-300 rounded-md my-2 p-2 w-full'/>
+                    <input type="text" onChange={(e) => setCompanyName(e.target.value)} placeholder='Job Hunt, Microsoft' className='border-2 border-gray-300 bg-[#09090B] text-white rounded-md my-2 p-2 w-full'/>
                 </div>
                 <div className='flex items-center gap-2 my-10'>
                     <button onClick={() => navigate('/admin/companies')} className='border px-3 py-2 rounded-xl text-black bg-white font-medium'>Cancel</button>
-                    <button onClick={registerCompany} className='border px-3 py-2 rounded-xl text-white bg-gray-800 font-medium'>Continue</button>
+                    <button onClick={registerCompany} className='border px-3 py-2 rounded-xl text-white bg-[#6044CF] font-medium'>Continue</button>
 
                 </div>
             </div>

@@ -62,11 +62,11 @@ const Signup = () => {
   }
   
   return (
-    <div>
+    <div className='h-screen'>
       <Navbar/>
-      <div className="flex min-h-full flex-1 flex-col  justify-center mx-auto items-center px-6 py-12 lg:px-8">
+      <div className="flex  flex-1 flex-col  justify-center mx-auto items-center px-6  lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm  ">
-          <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
+          <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-white">
             Sign Up
           </h2>
         </div>
@@ -74,7 +74,7 @@ const Signup = () => {
         <div className="mt-10 sm:mx-auto sm:w-full max-sm:max-w-md max-w-xl ">
           <form onSubmit={submitHandler}  className='flex flex-col gap-4'>
             <div>
-              <label  className="block text-sm/6 font-medium text-gray-900">
+              <label  className="block text-sm/6 font-medium ">
                 Full Name
               </label>
               <div className="mt-1">
@@ -85,14 +85,14 @@ const Signup = () => {
                   name='fullName'
                   onChange={changeEventHandler}
                   required
-                  className="block w-full rounded-md border border-gray-200 bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md border border-gray-200 bg-[#09090B] px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2   sm:text-sm/6"
                 />
               </div>
             </div>
 
             <div>
               <div className="flex items-center justify-between">
-                <label  className="block text-sm/6 font-medium text-gray-900">
+                <label  className="block text-sm/6 font-medium  ">
                   Email
                 </label>
               </div>
@@ -104,14 +104,14 @@ const Signup = () => {
                   name='email'
                   onChange={changeEventHandler}
                   required
-                  className="block w-full rounded-md border border-gray-200 bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md border border-gray-200 bg-[#09090B] px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2   sm:text-sm/6"
                 />
               </div>
             </div>
 
             <div>
               <div className="flex items-center justify-between">
-                <label  className="block text-sm/6 font-medium text-gray-900">
+                <label  className="block text-sm/6 font-medium  ">
                   Phone Number
                 </label>
               </div>
@@ -123,14 +123,14 @@ const Signup = () => {
                   name='phoneNumber'
                   onChange={changeEventHandler}
                   required
-                  className="block w-full border border-gray-200 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full border border-gray-200 rounded-md bg-[#09090B] px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2   sm:text-sm/6"
                 />
               </div>
             </div>
 
             <div>
               <div className="flex items-center justify-between">
-                <label  className="block text-sm/6 font-medium text-gray-900">
+                <label  className="block text-sm/6 font-medium ">
                   Password
                 </label>
               </div>
@@ -142,7 +142,7 @@ const Signup = () => {
                   onChange={changeEventHandler}
                   placeholder='********'
                   required
-                  className="block w-full rounded-md border border-gray-200 bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md border border-gray-200 bg-[#09090B] px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2   sm:text-sm/6"
                 />
               </div>
             </div>
@@ -158,10 +158,10 @@ const Signup = () => {
                     value='student'
                     checked={input.role === 'student'}
                     onChange={changeEventHandler}
-                    className=" cursor-pointer rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                    className=" cursor-pointer rounded-md bg-[#09090B] px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2   sm:text-sm/6"
                   />
                   <div className="flex items-center justify-between">
-                    <label htmlFor='r1'  className="block text-sm/6 font-medium text-gray-900 cursor-pointer">
+                    <label htmlFor='r1'  className="block text-sm/6 font-medium  cursor-pointer">
                       Student
                     </label>
                   </div>
@@ -174,10 +174,10 @@ const Signup = () => {
                     value='recruiter'
                     onChange={changeEventHandler}
                     checked={input.role === 'recruiter'}
-                    className="  cursor-pointer rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                    className="  cursor-pointer rounded-md bg-[#09090B] px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2   sm:text-sm/6"
                   />
                   <div className="flex items-center justify-between">
-                    <label htmlFor='r2' className="block text-sm/6 font-medium text-gray-900 cursor-pointer">
+                    <label htmlFor='r2' className="block text-sm/6 font-medium  cursor-pointer">
                       Recruiter
                     </label>
                   </div>
@@ -185,9 +185,9 @@ const Signup = () => {
               </div>
 
               {/* Profile Image  */}
-              <div className="flex items-center justify-between">
-              <div className="flex items-center justify-between">
-                <label  className=" text-sm/6 font-medium text-gray-900 ">
+              <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center justify-between ">
+                <label  className=" text-sm/6 font-medium ">
                   Profile
                 </label>
               </div>
@@ -197,7 +197,7 @@ const Signup = () => {
                   name='file'
                   onChange={changeFileHandler}
                   type='file'
-                  className="cursor-pointer block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="cursor-pointer block w-full rounded-md bg-[#09090B] px-3 py-1.5 text-base border border-gray-200 text-white outline-1 -outline-offset-1 outline-black placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2   sm:text-sm/6"
                 />
               </div>
             </div>
@@ -207,7 +207,7 @@ const Signup = () => {
               {
                 loading ? <button className='flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>Loading....</button>:<button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full justify-center rounded-md bg-[#6044CF] px-3 py-1.5 text-lg font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Sign Up
               </button>

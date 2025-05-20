@@ -7,11 +7,14 @@ const LatestJobs = () => {
     const {allJobs} = useSelector(state => state.job)
     return (
         <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4}}
         className='max-w-7xl mx-auto my-20'>
-            <h1 className='text-4xl font-bold'><span className='text-[#6A38C2]'>Latest & Top </span>Job Openings</h1>
+            <div className='w-fit flex flex-col items-center gap-4'>
+                <h1 className='text-4xl font-bold'><span className='text-[#6044CF]'>Latest & Top </span>Job Openings</h1>
+                <hr className='w-1/3 border-2 border-[#6044CF]'/>
+            </div>
             {/* Multiple job cards diplayed here  */}
             <motion.div
                 initial={{opacity:0, x: 100}}

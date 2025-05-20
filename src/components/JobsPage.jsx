@@ -33,9 +33,9 @@ const JobsPage = () => {
     },[allJobs,searchedQuery])
     
     return (
-        <div>
+        <div className='h-screen'>
             <Navbar/>
-            <div className='max-w-7xl mx-auto mt-10'>
+            <div className='max-w-7xl mx-auto mt-10 '>
                 <div className='flex gap-5'>
                     <div className='w-[20%]'>
                         <FilterCard/>

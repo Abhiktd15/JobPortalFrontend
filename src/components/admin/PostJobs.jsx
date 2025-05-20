@@ -56,41 +56,41 @@ const PostJobs = () => {
     }   
     
     return (
-        <div>
+        <div className='h-screen'>
             <Navbar/>
-            <div className='flex items-center justify-center w-screen my-5'>
+            <div className='flex items-center justify-center w-screen my-5 '>
                 <form onSubmit={submitHandler} className='p-8 max-w-4xl border border-gray-200 shadow-lg rounded-md '>
                     <div className='flex items-center justify-between mb-3  '>
                         <label>Title</label>
-                        <input value={input.title} name="title" onChange={changeEventHandler} type="text" className='border-2 border-gray-300 rounded-md p-2 ' />
+                        <input value={input.title} name="title" onChange={changeEventHandler} type="text" className='border-2 border-gray-300 bg-[#09090B] text-white rounded-md p-2 ' />
                     </div>
                     <div className='flex items-center justify-between mb-3'>
                         <label>Description</label>
-                        <input value={input.description} name="description" onChange={changeEventHandler} type="text" className='border-2 border-gray-300 rounded-md p-2 ' />
+                        <input value={input.description} name="description" onChange={changeEventHandler} type="text" className='border-2 border-gray-300 bg-[#09090B] text-white rounded-md p-2 ' />
                     </div>
                     <div className='flex items-center justify-between mb-3'>
                         <label>Requirements</label>
-                        <input value={input.requirements} name="requirements" onChange={changeEventHandler} type="text" className='border-2 border-gray-300 rounded-md p-2 ' />
+                        <input value={input.requirements} name="requirements" onChange={changeEventHandler} type="text" className='border-2 border-gray-300 bg-[#09090B] text-white rounded-md p-2 ' />
                     </div>
                     <div className='flex items-center justify-between mb-3'>
                         <label>Salary</label>
-                        <input value={input.salary} name="salary" onChange={changeEventHandler} type="text" className='border-2 border-gray-300 rounded-md p-2 ' />
+                        <input value={input.salary} name="salary" onChange={changeEventHandler} type="text" className='border-2 border-gray-300 bg-[#09090B] text-white  rounded-md p-2 ' />
                     </div>
                     <div className='flex items-center justify-between mb-3'>
                         <label>Location</label>
-                        <input value={input.location} name="location" onChange={changeEventHandler} type="text" className='border-2 border-gray-300 rounded-md p-2 ' />
+                        <input value={input.location} name="location" onChange={changeEventHandler} type="text" className='border-2 border-gray-300 bg-[#09090B] text-white  rounded-md p-2 ' />
                     </div>
                     <div className='flex items-center justify-between mb-3'>
                         <label>Job Type</label>
-                        <input value={input.jobType} name="jobType" onChange={changeEventHandler} type="text" className='border-2 border-gray-300 rounded-md p-2 ' />
+                        <input value={input.jobType} name="jobType" onChange={changeEventHandler} type="text" className='border-2 border-gray-300 bg-[#09090B] text-white  rounded-md p-2 ' />
                     </div>
                     <div className='flex items-center justify-between mb-3'>
                         <label>Experience Level</label>
-                        <input value={input.experience} name="experience" onChange={changeEventHandler} type="text" className='border-2 border-gray-300 rounded-md p-2 ' />
+                        <input value={input.experience} name="experience" onChange={changeEventHandler} type="text" className='border-2 border-gray-300 bg-[#09090B] text-white  rounded-md p-2 ' />
                     </div>
                     <div className='flex items-center justify-between mb-3'>
                         <label>No of Positions</label>
-                        <input value={input.position} name="position" onChange={changeEventHandler} type="number" className='border-2 border-gray-300 rounded-md p-2 ' />
+                        <input value={input.position} name="position" onChange={changeEventHandler} type="number" className='border-2 border-gray-300 bg-[#09090B] text-white  rounded-md p-2 ' />
                     </div>
 
                     {
@@ -99,7 +99,7 @@ const PostJobs = () => {
                         <div className='flex items-center justify-between mb-3'>
                             <select name="companyId"
                                 onChange={(e) => selectChangeHandler(e.target.value)}
-                                className="mt-1 block w-full rounded-lg border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm p-2 bg-white">
+                                className="mt-1 block w-full rounded-lg border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 text-sm p-2 bg-[#09090B]">
                                 <option value=""  selected disabled>Choose Company</option>
                                 {
                                     companies?.map((company) => 
@@ -109,7 +109,7 @@ const PostJobs = () => {
                             </select>
                         </div>
                     }
-                    <button className='w-full bg-gray-900 text-white rounded-lg py-3 font-medium hover:bg-gray-600'>{
+                    <button className='w-full bg-[#6044CF] text-white rounded-lg py-3 font-medium hover:bg-gray-600'>{
                         loading?"Loading...":"Post Job"    
                     }</button>
                     {

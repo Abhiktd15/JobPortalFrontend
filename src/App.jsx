@@ -109,7 +109,7 @@ function App() {
     isAuthorized()
   },[])
   return (
-    <>
+    <div className='text-white bg-[#09090B] '>
       <RouterProvider router={appRouter}/>
       <ToastContainer 
         position="bottom-right"
@@ -122,7 +122,7 @@ function App() {
         pauseOnHover
         theme="dark"
       />
-    </>
+    </div>
   )
 }
 
