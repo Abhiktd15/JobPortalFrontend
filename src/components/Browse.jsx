@@ -4,6 +4,7 @@ import JobCard from './JobCard'
 import Navbar from './shared/Navbar'
 import { useEffect } from 'react'
 import { setSearchedQuery } from '../redux/jobSlice'
+import {motion} from 'framer-motion'
 
 const Browse = () => {
     useGetAllJobs()
@@ -17,7 +18,11 @@ const Browse = () => {
             <Navbar/>
             <div className='max-w-7xl mx-auto my-10'>
                 <h1 className='font-bold text-2xl my-10'>Serach Results ({allJobs?.length})</h1>
-                <div className='grid grid-cols-3 gap-4 mt-5'>
+                <motion.div
+                initial={{opacity:0,y:100}}
+                animate={{opacity:1,y:0}}
+                transition={{duration:0.5}}
+                className='grid grid-cols-3 gap-4 mt-5'>
                     {
                         allJobs?.map((job) => {
                             return (
@@ -25,7 +30,7 @@ const Browse = () => {
                             )
                         })
                     }
-                </div>
+                </motion.div>
             </div>
         </div>
     )

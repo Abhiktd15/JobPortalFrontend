@@ -11,6 +11,7 @@ const JobsPage = () => {
     const {allJobs,searchedQuery} = useSelector(state => state.job)
     const [filterJobs, setFilterJobs] = React.useState(allJobs)
 
+
     useEffect(() => {
 
         if (searchedQuery && !isNaN(Number(searchedQuery))) {
@@ -21,11 +22,11 @@ const JobsPage = () => {
             setFilterJobs(filteredJobs);
         }
         else if(searchedQuery){
-            console.log(typeof(searchedQuery))
             const filteredJobs = allJobs?.filter((job) => {
                 return job?.title?.toLowerCase().includes(searchedQuery.toLowerCase()) || job?.location?.toLowerCase().includes(searchedQuery.toLowerCase())
             })
             setFilterJobs(filteredJobs)
+            
         }else{
             setFilterJobs(allJobs)
         }

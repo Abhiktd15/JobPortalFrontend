@@ -19,17 +19,16 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4}}
-                className="flex flex-col gap-5 my-10">
+                className="flex flex-col gap-5 my-10 items-center">
                 <span className="mx-auto px-4 py-2 rounded-full bg-gray-100 text-[#F83002] font-medium">
-                No 1 Job search website
+                No. 1 Platform for Your Next Career Move
                 </span>
                 <h1 className="text-5xl font-bold">
                 Search, Apply & <br /> Get Your{" "}
                 <span className="text-[#6A38C2]">Dream Jobs</span>
                 </h1>
-                <p>
-                Lorem Ipsum dolor set amit dispadfklk j;ljadkjf ;adlkjfak; jfdkajf
-                ;akljf ;adkjf;kald jfkadjf ;akldjfkladj
+                <p className="w-[450px] text-lg font-medium leading-5 ">
+                Explore thousands of tech jobs from top companies. Whether you're a developer, designer, or marketer – we've got the perfect role waiting for you.
                 </p>
                 <div className="flex w-[40%] h-10 shadow-lg border border-gray-200 pl-4 rounded-full items-center gap-4 mx-auto">
                 <input

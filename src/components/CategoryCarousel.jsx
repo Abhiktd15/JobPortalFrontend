@@ -49,7 +49,7 @@ const CategoryCarousel = () => {
                 items={items}
                 infinite
                 autoPlay
-                animationDuration={1000}
+                animationDuration={2000}
                 disableDotsControls
                 responsive={responsive}
                 controlsStrategy="alternate"

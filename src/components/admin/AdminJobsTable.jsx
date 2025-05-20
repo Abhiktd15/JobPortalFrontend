@@ -56,13 +56,7 @@ const AdminJobsTable = () => {
                                                 className="absolute right-0 z-10 mt-2 min-w-24 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
                                             >
                                                 <div className="py-1">
-                                                <MenuItem>
-                                                    <div onClick={() => navigate(`/admin/companies/${job._id}`)}
-                                                        className="flex items-center gap-5 px-4 py-1 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:text-gray-900 data-focus:outline-hidden"
-                                                    >
-                                                    <PencilIcon className='w-6 h-6'/>    Edit
-                                                    </div>
-                                                </MenuItem>
+                                                
                                                 <MenuItem>
                                                     <div onClick={() => navigate(`/admin/jobs/${job._id}/applicants`)} className="flex items-center gap-5  px-4 py-1 text-sm text-gray-700      ">
                                                         <EyeIcon className='w-6 h-6'/>
