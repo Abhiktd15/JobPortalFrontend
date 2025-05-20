@@ -32,7 +32,7 @@ A full-featured job portal web application where users can search, apply for job
 - JWT for authentication
 
 ---
-**Frontend:**
+**Frontend Setup Guide:**
 - Git Clone
 - Npm install
 - npm run dev
