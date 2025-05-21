@@ -1,6 +1,7 @@
 import { BookmarkIcon } from '@heroicons/react/24/outline'
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import {motion} from 'framer-motion'
 
 const JobCard = ({job}) => {
     const navigate = useNavigate()
@@ -12,7 +13,10 @@ const JobCard = ({job}) => {
         return daysAgo;
     }
     return (
-        <div className='p-5 min-h-[300px] rounded-2xl shadow-xl bg-[#09090B] border border-gray-100 '>
+        <motion.div
+        whileHover={{rotateY:30}}
+        transition={{duration:0.2}}
+        className='p-5 min-h-[300px] rounded-2xl shadow-xl bg-[#09090B] border border-gray-100  '>
             <div className='flex items-center justify-between'>
                 <p className='text-sm text-gray-600'>{daysAgoFunction(job?.createdAt) === 0 ?"Today":`${daysAgoFunction(job?.createdAt)}`} days ago</p>
                 <button className='border border-black p-2 rounded-full hover:bg-gray-100 hover:text-black'><BookmarkIcon className=' h-5 w-5 rounded-full '/></button>
@@ -39,7 +43,7 @@ const JobCard = ({job}) => {
             <div className=' flex items-center gap-4 mt-4'>
                 <button onClick={() => navigate(`/jobs/description/${job?._id}`)} className='bg-[#7209b7] text-white py-2 px-3 rounded-md text-sm font-medium hover:scale-105'>View Details</button>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
