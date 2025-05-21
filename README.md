@@ -37,5 +37,11 @@ A full-featured job portal web application where users can search, apply for job
 - Npm install
 - npm run dev
 
-## 📸 ScreenShots
+## 📸 ScreenShots (Student Portal)
+**HomePage:**
+1. ![image](https://github.com/user-attachments/assets/463f5725-8290-4c94-ab41-7132c3d8f066)
+2. ![image](https://github.com/user-attachments/assets/e691101f-146d-42f3-b41a-12cd9fbbdea7)
+
+
+**HomePage:**
 
